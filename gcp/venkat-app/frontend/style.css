@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  font-family: Arial;
+}
+.left-panel {
+  width: 30%;
+  padding: 20px;
+  background: #f2f2f2;
+}
+.right-panel {
+  width: 70%;
+  padding: 20px;
+}
+input {
+  display: block;
+  margin: 10px 0;
+  padding: 8px;
+}
+button {
+  padding: 10px;
+}
