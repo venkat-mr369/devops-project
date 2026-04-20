@@ -44,7 +44,7 @@ pip install gunicorn
 # ✅ STEP 2: Create Gunicorn service
 
 ```bash
-sudo nano /etc/systemd/system/venkat-backend.service
+sudo vi /etc/systemd/system/venkat-backend.service
 ```
 ```bash
 sudo usermod -aG sudo moba
@@ -59,7 +59,7 @@ Description=Venkat Flask Backend
 After=network.target
 
 [Service]
-User=ams2007dj
+User=moba
 WorkingDirectory=/home/moba/devops-project/gcp/venkat-app/backend
 ExecStart=/home/moba/devops-project/gcp/venkat-app/backend/venv/bin/gunicorn -w 3 -b 127.0.0.1:5000 app:app
 
