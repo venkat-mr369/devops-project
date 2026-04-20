@@ -46,6 +46,10 @@ pip install gunicorn
 ```bash
 sudo nano /etc/systemd/system/venkat-backend.service
 ```
+```bash
+sudo usermod -aG sudo moba
+switching to moba user
+```
 
 Paste:
 
@@ -56,8 +60,8 @@ After=network.target
 
 [Service]
 User=ams2007dj
-WorkingDirectory=/home/ams2007dj/devops-project/gcp/venkat-app/backend
-ExecStart=/home/ams2007dj/devops-project/gcp/venkat-app/backend/venv/bin/gunicorn -w 3 -b 127.0.0.1:5000 app:app
+WorkingDirectory=/home/moba/devops-project/gcp/venkat-app/backend
+ExecStart=/home/moba/devops-project/gcp/venkat-app/backend/venv/bin/gunicorn -w 3 -b 127.0.0.1:5000 app:app
 
 Restart=always
 
@@ -82,8 +86,8 @@ After=network.target
 
 [Service]
 User=ams2007dj
-WorkingDirectory=/home/ams2007dj/devops-project/gcp/venkat-app/backend
-ExecStart=/home/ams2007dj/devops-project/gcp/venkat-app/backend/cloud-sql-proxy ams-kap:us-central1:venkat-psql
+WorkingDirectory=/home/moba/devops-project/gcp/venkat-app/backend
+ExecStart=/home/moba/devops-project/gcp/venkat-app/backend/cloud-sql-proxy ams-kap:us-central1:venkat-psql
 
 Restart=always
 
@@ -106,7 +110,7 @@ server {
     listen 80;
 
     location / {
-        root /home/ams2007dj/devops-project/gcp/venkat-app/frontend;
+        root /home/moba/devops-project/gcp/venkat-app/frontend;
         index index.html;
     }
 
